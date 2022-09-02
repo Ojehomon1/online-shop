@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+
+    <style>
+        #section-1 {
+            /* max-width: 460px; */
+            display: flex;
+            /* flex-direction: column; */
+            /* justify-content: stretch; */
+            align-items: stretch;
+            /* flex-wrap: wrap; */
+            width: calc(100% - 60px);
+            margin: auto;
+        }
+
+        section > div {
+            background: grey;
+            width: 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Flexbox Guide</a><br>
+    <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid Guide</a>
+    <br><br><br>
+    <section id="section-1">
+        <div>test</div>
+        <div>test<br>test<br>test</div>
+        <div>test<br>test<br>test<br>test</div>
+        <div>test</div>
+        <div>test</div>
+    </section>
+</body>
+</html>
