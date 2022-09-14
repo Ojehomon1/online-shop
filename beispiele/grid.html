@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+
+    <style>
+        section#section-1 {
+            display: grid;
+            grid-template-columns: 100px 300px 50px;
+            grid-template-rows: 80px 200px 40px;
+        }
+
+        /*
+            ------------------------------------------------------
+            |   100px    |           300px              |  50px  |
+            ------------------------------------------------------
+            |            |                              |        |
+            |            |                              |        |
+            |            |                              |        |
+            |            |                              |        |
+            |            |                              |        |
+            |            |                              |        |
+            ------------------------------------------------------
+            |            |                              |        |
+            ------------------------------------------------------
+        */
+
+        #section-1 header {
+            background: red;
+            color: #FFF;
+            text-align: center;
+            font-size: 1.5em;
+
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+        }
+        #section-1 div {
+            background: green;
+        }
+        #section-1 footer {
+            background: blue;
+            color: #FFF;
+            text-align: center;
+            font-size: 1.5em;
+
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+        }
+
+        /* ----------------------------------------------- */
+        
+        section#section-2 {
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr 200px;
+            grid-template-rows: 80px 200px 40px;
+            grid-template-areas:
+                "header header header header"
+                "sbleft main main sbright"
+                "footer footer footer footer";
+
+
+            /* Möglicher Aufbau in mobilem Layout */
+            /* grid-template-columns: 300px;
+            grid-template-rows: 80px;
+            
+            grid-template-areas:
+                "main"
+                "header"
+                "sbleft"
+                "sbright"
+                "footer";  */
+        }
+
+        /*
+            ------------------------------------------------------
+            |   header   |           header             |  header|
+            ------------------------------------------------------
+            |            |                              |        |
+            |            |                              |        |
+            |    sbleft  |           main               | sbright|
+            |            |                              |        |
+            |            |                              |        |
+            |            |                              |        |
+            ------------------------------------------------------
+            | footer     |           footer             | footer |
+            ------------------------------------------------------
+        */
+
+        #section-2 header {
+            background: red;
+            color: #FFF;
+            text-align: center;
+            font-size: 1.5em;
+
+            grid-area: header;
+        }
+        #section-2 div {
+            background: green;
+        }
+        #section-2 footer {
+            background: blue;
+            color: #FFF;
+            text-align: center;
+            font-size: 1.5em;
+
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid</h1>
+
+    <section id="section-1">
+        <header>Header</header>
+
+        <div>Sidebar Left</div>
+        <div>Main</div>
+        <div>Sidebar Right</div>
+
+        <footer>Footer</footer>
+    </section>
+
+    <section id="section-2">
+        <header>Header</header>
+
+        <div>Sidebar Left</div>
+        <div>Main</div>
+        <div>Sidebar Right</div>
+
+        <footer>Footer</footer>
+    </section>
+</body>
+</html>
